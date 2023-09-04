@@ -18,9 +18,9 @@ public class TransactionController {
 
     @GetMapping("/transactions")
     public String getTransactions (ModelMap model) {
-        List<Transaction> txns = transactionService.findAll();
+        List<Transaction> transactions = transactionService.findAll();
 
-        model.put("transactions", txns);
+        model.put("transactions", transactions);
 
         return "transactions";
     }
