@@ -15,9 +15,9 @@ public class TransactionService {
     private TransactionRepository txnRepo;
 
     public List<Transaction> findAll () {
-        List<Transaction> txns = txnRepo.findAll();
-        Collections.sort(txns, (txn1, txn2) -> txn1.getDate().compareTo(txn2.getDate()));
-        return txns;
+        List<Transaction> transactions = txnRepo.findAll();
+        Collections.sort(transactions, (transaction1, transaction2) -> transaction1.getDate().compareTo(transaction2.getDate()));
+        return transactions;
     }
 
     public Transaction findById(Long transactionId) {

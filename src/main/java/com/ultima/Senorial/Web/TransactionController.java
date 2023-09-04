@@ -14,21 +14,21 @@ import java.util.List;
 public class TransactionController {
 
     @Autowired
-    private TransactionService txnService;
+    private TransactionService transactionService;
 
     @GetMapping("/transactions")
     public String getTransactions (ModelMap model) {
-        List<Transaction> txns = txnService.findAll();
+        List<Transaction> txns = transactionService.findAll();
 
         model.put("transactions", txns);
 
         return "transactions";
     }
 
-    @GetMapping("/transactions/{txnId}")
-    public String getTransaction (ModelMap model, @PathVariable Long txnId) {
-        Transaction txn = txnService.findById(txnId);
-        model.put("transaction", txn);
+    @GetMapping("/transactions/{transactionId}")
+    public String getTransaction (ModelMap model, @PathVariable Long transactionId) {
+        Transaction transaction = transactionService.findById(transactionId);
+        model.put("transaction", transaction);
         return "transaction";
     }
 }
